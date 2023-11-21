@@ -1,0 +1,11 @@
+.button {
+  @apply relative overflow-hidden bg-cyan-500 w-40 first-letter:border-2 border-white rounded-md py-2 px-4 hover:scale-105;
+
+  &__gradient {
+    @apply absolute bottom-0 left-0 right-0 top-0 z-10 h-full w-full overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 transition duration-300 ease-in-out hover:opacity-70;
+  }
+
+  &__content {
+    @apply relative text-white z-20;
+  }
+}
