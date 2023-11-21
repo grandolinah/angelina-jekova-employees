@@ -1,0 +1,19 @@
+.input {
+  @apply flex flex-col md:flex-row gap-2 justify-center items-center m-3 p-6 bg-slate-100 rounded-lg;
+
+  &__label {
+    @apply text-lg text-slate-700;
+  }
+
+  &__file-input {
+    @apply hidden;
+  }
+
+  &__button {
+    @apply mx-3;
+  }
+
+  &__file {
+    @apply w-20 md:w-40 mx-3 truncate text-sm text-slate-800;
+  }
+}
