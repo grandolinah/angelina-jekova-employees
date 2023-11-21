@@ -1,8 +1,9 @@
-import { useRef, useEffect, useState, ChangeEvent } from 'react';
+import { useRef, useState, ChangeEvent } from 'react';
 import Papa from 'papaparse';
 import { InputPropsType } from '@/app/types/input-type';
 import Button from '@/app/components/Button/Button';
 import styles from './Input.module.scss';
+import { CellType } from '@/app/types/cell-type';
 
 const Input = ({ onUpload }: InputPropsType) => {
   const inputFileRef = useRef<HTMLInputElement>(null);
@@ -24,12 +25,12 @@ const Input = ({ onUpload }: InputPropsType) => {
       header: true,
       skipEmptyLines: true,
       complete: (results) => {
-        const rowsArray: string[] = [];
-        const valuesArray: string[] = [];
+        const rowsArray: string[][] = [];
+        const valuesArray: string[][] = [];
 
         results.data.map((cell) => {
-          rowsArray.push(Object.keys(cell));
-          valuesArray.push(Object.values(cell));
+          rowsArray.push(Object.keys(cell as CellType));
+          valuesArray.push(Object.values(cell as CellType));
         });
 
         onUpload(rowsArray[0], valuesArray);

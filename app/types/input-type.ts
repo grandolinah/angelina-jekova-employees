@@ -1,3 +1,3 @@
 export type InputPropsType = {
-  onUpload: (tableRows: string[] | string, values: string[]) => void;
+  onUpload: (tableRows: string[], values: string[][]) => void;
 }
