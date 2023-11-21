@@ -1,0 +1,15 @@
+.result {
+  @apply bg-white w-full p-6 my-4 rounded-lg;
+
+  &__title {
+    @apply w-full text-center text-slate-700 text-lg uppercase font-medium;
+  }
+
+  &__description {
+    @apply w-full text-center text-slate-700 text-base my-3;
+  }
+
+  &__highlight {
+    @apply bg-cyan-600;
+  }
+}
