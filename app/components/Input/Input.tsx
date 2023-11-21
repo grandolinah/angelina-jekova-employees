@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 import { InputPropsType } from '@/app/types/input-type';
 import Button from '@/app/components/Button/Button';
 import styles from './Input.module.scss';
-import { CellType } from '@/app/types/cell-type';
+import { DataRow } from '@/app/types/common';
 
 const Input = ({ onUpload }: InputPropsType) => {
   const inputFileRef = useRef<HTMLInputElement>(null);
@@ -29,8 +29,8 @@ const Input = ({ onUpload }: InputPropsType) => {
         const valuesArray: string[][] = [];
 
         results.data.map((cell) => {
-          rowsArray.push(Object.keys(cell as CellType));
-          valuesArray.push(Object.values(cell as CellType));
+          rowsArray.push(Object.keys(cell as DataRow));
+          valuesArray.push(Object.values(cell as DataRow));
         });
 
         onUpload(rowsArray[0], valuesArray);
