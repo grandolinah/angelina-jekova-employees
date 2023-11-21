@@ -1,4 +1,4 @@
-import DataGrid, { Column } from 'react-data-grid';
+import DataGrid from 'react-data-grid';
 import { PreviewPropsType } from '@/app/types/preview-type';
 import { mapRowValues } from '@/app/helpers/map-row-values';
 import styles from './Preview.module.scss';
