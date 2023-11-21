@@ -4,13 +4,6 @@ import { InputPropsType } from '@/app/types/input-type';
 import Button from '@/app/components/Button/Button';
 import styles from './Input.module.scss';
 
-export type EmployeeData = {
-  DateFrom: string;
-  DateTo: string;
-  EmpID: string;
-  ProjectID: string;
-}
-
 const Input = ({ onUpload }: InputPropsType) => {
   const inputFileRef = useRef<HTMLInputElement>(null);
   const [selectedFile, setSelectedFile] = useState();
