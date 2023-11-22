@@ -1,13 +1,25 @@
 import { useRef, useState, ChangeEvent } from 'react';
+import { CSVLink, CSVDownload } from 'react-csv';
 import Papa from 'papaparse';
 import { InputPropsType } from '@/app/types/input-type';
 import Button from '@/app/components/Button/Button';
 import styles from './Input.module.scss';
 import { DataRow } from '@/app/types/common';
 
+const CSV_DATA = [
+  ['EmpID','ProjectID','DateFrom','DateTo'],
+  ['143','12','2013-11-01','2014-01-05'],
+  ['218','10','2012-05-16','NULL'],
+  ['143','10','2009-01-01','2011-04-27'],
+  ['217','10','2012-05-16','2012-07-16'],
+  ['212','10','2012-05-16','2012-07-16'],
+  ['1','22','2023-05-15','2023-05-17'],
+  ['2','22','2023-05-15','2023-05-25']
+];
+
 const Input = ({ onUpload }: InputPropsType) => {
   const inputFileRef = useRef<HTMLInputElement>(null);
-  const [selectedFile, setSelectedFile] = useState();
+  const [selectedFile, setSelectedFile] = useState<any>();// TODO:
   const [uploadedFileName, setUploadedFileName] = useState('');
 
   const onClickInputHandler = () => {
@@ -59,6 +71,7 @@ const Input = ({ onUpload }: InputPropsType) => {
         onClickHandler={onClickInputHandler}
         content="Add file"
       />
+      <CSVLink data={CSV_DATA}>Download example</CSVLink>
     </div>
   );
 };
