@@ -4,7 +4,7 @@ export const mapRowValues = (arrays: string[][]) => {
   const rows: DataRow[] = [];
 
   arrays.forEach((array, index) => {
-    const [EmpID, ProjectID, DateTo, DateFrom] = array;
+    const [EmpID, ProjectID, DateFrom, DateTo] = array;
 
     rows.push({
       id: index,
